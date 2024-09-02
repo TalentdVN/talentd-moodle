@@ -910,6 +910,28 @@ class renderer extends plugin_renderer_base {
         return $output;
     }
 
+    /*
+     * View Page Simple
+     */
+    /**
+     * Generates the simple view page 
+     *
+     * @param stdClass $course the course settings row from the database.
+     * @param stdClass $quiz the quiz settings row from the database.
+     * @param stdClass $cm the course_module settings row from the database.
+     * @param context_module $context the quiz context.
+     * @param view_page $viewobj
+     * @return string HTML to display
+     */
+    public function view_page_simple($course, $quiz, $cm, $context, $viewobj) {
+        $output = '';
+
+        $output .= $this->view_information($quiz, $cm, $context, $viewobj->infomessages);
+        $output .= $this->view_page_tertiary_nav($viewobj);
+
+        return $output;
+    }
+
     /**
      * Render the tertiary navigation for the view page.
      *

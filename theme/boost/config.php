@@ -61,9 +61,9 @@ $THEME->layouts = [
     ),
     // Part of course, typical for modules - default page layout if $cm specified in require_login().
     'incourse' => array(
-        'file' => 'drawers.php',
-        'regions' => array('side-pre'),
-        'defaultregion' => 'side-pre',
+        'file' => 'incourse.php',
+        'regions' => array(),
+        'options' => array('nofooter' => true, 'nonavbar' => true, 'noactivityheader' => true),
     ),
     // The site home page.
     'frontpage' => array(
