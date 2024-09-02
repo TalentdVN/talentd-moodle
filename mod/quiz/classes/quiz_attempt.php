@@ -1086,6 +1086,19 @@ class quiz_attempt {
     }
 
     /**
+     * Retrieves the category of a question in the quiz attempt.
+     *
+     * @param int $slot The slot number of the question.
+     * @return string The name of the category.
+     */
+    public function get_question_category($slot) {
+        global $DB;
+        $categoryId = $this->quba->get_question($slot, false)->category;
+        $category = $DB->get_field('question_categories', 'name', array('id'=>$categoryId));
+        return $category;
+    }
+
+    /**
      * Get the time remaining for an in-progress attempt, if the time is short
      * enough that it would be worth showing a timer.
      *

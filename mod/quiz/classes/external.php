@@ -932,6 +932,7 @@ class mod_quiz_external extends external_api {
             [
                 'slot' => new external_value(PARAM_INT, 'slot number'),
                 'type' => new external_value(PARAM_ALPHANUMEXT, 'question type, i.e: multichoice'),
+                'category' => new external_value(PARAM_RAW, 'category'),
                 'page' => new external_value(PARAM_INT, 'page of the quiz this question appears on'),
                 'questionnumber' => new external_value(PARAM_RAW,
                         'The question number to display for this question, e.g. "7", "i" or "Custom-B)".'),
@@ -1004,6 +1005,7 @@ class mod_quiz_external extends external_api {
                 'sequencecheck' => $qattempt->get_sequence_check_count(),
                 'lastactiontime' => $qattempt->get_last_step()->get_timecreated(),
                 'hasautosavedstep' => $qattempt->has_autosaved_step(),
+                'category' => $attemptobj->get_question_category($slot),
             ];
 
             if ($question['questionnumber'] === (string) (int) $question['questionnumber']) {
