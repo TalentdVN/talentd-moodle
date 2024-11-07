@@ -46,3 +46,23 @@ Moodle is provided freely as open source software, under version 3 of the GNU Ge
 [10]: https://moodle.com/partners
 [11]: https://moodle.com/cloud
 [12]: https://moodledev.io/general/license
+
+
+## Setting Moodle
+- Activate webservice 
+  - User - role (manager)
+  - Service rest
+- Active plugin `auth_userkey`
+- Setting for Course 
+  - Course  
+    - Format: single activity 
+    - Maximum upload size
+    - Completion tracking: yes
+    - Show activity completion conditions: no
+  - Course format ([single activity](http://localhost:8000/admin/settings.php?section=formatsettingsingleactivity))
+    - Type: Scrom
+  - Default Activity completion:
+    -  Scrom - Passed
+- For a course
+  - Set Course Completion criteria : activity
+- Notification: disable
